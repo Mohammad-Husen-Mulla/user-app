@@ -36,3 +36,13 @@ Installation
      mvn spring-boot:run
    ```
 The application will start on http://localhost:8080 by default.   
+
+Configuration
+-
+The application configuration can be modified in the application.properties file located in src/main/resources/. 
+
+You can configure:
+
+- Database connection settings
+- Security settings
+- Application-specific properties
