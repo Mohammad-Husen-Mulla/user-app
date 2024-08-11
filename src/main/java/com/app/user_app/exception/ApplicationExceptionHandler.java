@@ -14,26 +14,22 @@ public class ApplicationExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<?> handleGlobalException(Exception e) {
-        logger.error("Message: {}\nStackTrace: {}",e.getMessage(),e.getStackTrace());
         return new ResponseEntity<>("Internal Server Error!!", HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @ExceptionHandler(EmailAlreadyExistsException.class)
     public ResponseEntity<?> handleEmailAllreadyExistsException(EmailAlreadyExistsException e) {
-        logger.error("Message: {}\nStackTrace: {}",e.getMessage(),e.getStackTrace());
         return new ResponseEntity<>(e.getMessage(), HttpStatus.CONFLICT);
 
     }
 
     @ExceptionHandler(InvalidPasswordException.class)
     public ResponseEntity<?> handleInvalidPasswordExceptionException(InvalidPasswordException exception) {
-        logger.error(exception.getMessage());
         return new ResponseEntity<>(exception.getMessage(), HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(ApplicationUserNotFoundException.class)
     public ResponseEntity<?> handleApplicationUserNotFoundException(ApplicationUserNotFoundException exception) {
-        logger.error(exception.getMessage());
         return new ResponseEntity<>(exception.getMessage(), HttpStatus.NO_CONTENT);
     }
 }
