@@ -53,7 +53,7 @@ public class ApplicationUserController {
 
     @PutMapping("update/password")
     public ResponseEntity<?> updatePassword(@Valid @RequestBody PasswordUpdateDto passwordUpdateDto) {
-        applicationUserService.resetApssword(passwordUpdateDto.getOldPassword(),
+        applicationUserService.resetAppPassword(passwordUpdateDto.getOldPassword(),
                 passwordUpdateDto.getNewPassword(),
                 passwordUpdateDto.getEmail());
         return new ResponseEntity<>("Password updated successfully", HttpStatus.OK);

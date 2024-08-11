@@ -14,5 +14,5 @@ public interface ApplicationUserService {
 
     void deleteUser(Long id);
 
-    void resetApssword(String oldPassword, String newPassword, String email);
+    void resetAppPassword(String oldPassword, String newPassword, String email);
 }
